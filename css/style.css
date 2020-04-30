@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+/* --------------------------------
+base
+-------------------------------- */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    background-color: black;
+}
+body {
+    color: blanchedalmond;
+    font-family: 'Quicksand', sans-serif;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+a:link, a:visited, a:hover, a:active {
+    color: blanchedalmond;
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+
+
+
+
+
+
+/* --------------------------------
+parts
+-------------------------------- */
+.heading{
+    font-size: 5.0rem;
+    text-shadow: 10px 10px 12px #696969;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    padding: 100px 0;
+    /* opacity: 0.7; */
+}
+.wrapper{
+    max-width: 1170px;
+    height: 100vh;
+    margin: 0 auto;
+}
+section{
+    margin-bottom: 180px;
+}
+.capital-letter{
+    text-transform: uppercase;
+}
+/* .fade_off {
+    opacity: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+}
+.fade_on {
+    opacity: 1;
+} */
+
+/* .is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+} */
+
+
+
+
+
+
+/* --------------------------------
+haeder
+-------------------------------- */
+header{
+    height: 60px;
+    padding-top: 40px;
+}
+.header-menu{
+    display: flex;
+    justify-content: flex-end;
+}
+.header-menu a{
+    font-size: 1.5rem;
+    margin-right: 7.0rem;
+    letter-spacing: 0.5rem;
+    display: inline-block;
+    /* padding: 2% 0; */
+}
+.header-menu a:hover {
+    color: #ffffff;
+    opacity: 0.5;
+    padding-top: 5px;
+    transition: all 0.3s;
+}
+
+
+
+
+
+/* --------------------------------
+.message-wrapper
+-------------------------------- */
+.message-wrapper{
+    padding: 200px 0;
+    height: 100vh;
+    position: relative;
+}
+.message-wrapper h1{
+    position: absolute;
+    top: 30%;
+    transform: translate3d(-50%, -70%, 10px);
+    width: 800px;
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.5rem;
+    margin: 0 auto;
+    opacity:0;
+    animation-name:h1;
+    animation-duration:10s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes h1 {
+from{
+    opacity: 0;
+    transform: translateY(-150px);
+}
+to{
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+.message-wrapper h1::before,
+.message-wrapper h1::after {
+    content: '';
+    display: inline-block;
+    width: 140px;
+    height: 2px;
+    margin: 0 30px;
+    background-color: blanchedalmond;
+    vertical-align: middle;
+}
+.menu-about-me{
+    display: inline-block;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    font-size: 1.5rem;
+    margin-right: 7.0rem;
+    letter-spacing: 0.5rem;
+    padding: 2% 0 2% 2%;
+}
+.menu-about-me:hover {
+    opacity: 0.5;
+}
+.menu-about-me::after {
+    content: '';
+    display: block;
+    width: 0;
+    margin: 2px auto 0;
+    border-bottom: 2px solid blanchedalmond;
+    transition: width 0.3s ease-in-out;
+}
+.menu-about-me:hover::after {
+    width: 100%;
+}
+
+
+
+
+
+
+/* --------------------------------
+garally
+-------------------------------- */
+.garally{
+    height: 100%;
+}
+.slider{
+    vertical-align: middle;
+    padding-top: 80px;
+}
+.pic-description{
+    display: block;
+    text-align: right;
+    padding: 20px 200px 0 0;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+
+
+
+
+
+/* サムネイル選択時の装飾 */
+/* .sub-slider .slick-track .slick-current {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ff4500;
+    transform: translateY(50);
+    transition: all 1s;
+} */
+
+
+
+
+
+
+
+/* --------------------------------
+#profile
+-------------------------------- */
+.profile-wrapper{
+    max-width: 1170px;
+    margin: 0 auto;
+    height: 90vh;
+    position: relative;
+}
+.profile{
+    height: 90%;
+}
+.profile-contets{
+    height: 70%;
+}
+.profile-heading{
+    font-size: 3.0rem;
+    text-shadow: 10px 10px 12px #696969;
+    letter-spacing: 0.5rem;
+    padding: 100px 0;
+    opacity: 0.7;
+    font-family: "Open Baskerville";
+}
+.first-column{
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+}
+.left-row .right-row{
+    width: 50%;
+}
+.second-column{
+    width: 100%;
+    height: 33%;
+    position: relative;
+}
+.second-column>h3{
+    padding: 60px 0;
+    text-align: center;
+    font-size: 5.0rem;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.8rem;
+}
+.second-column>h3::before,
+.second-column>h3::after {
+    content: '';
+    display: inline-block;
+    width: 140px;
+    height: 2px;
+    margin: 0 30px;
+    background-color: blanchedalmond;
+    vertical-align: middle;
+}
+.facebook{
+    position: absolute;
+    right: 20%;
+    bottom: 20%;
+    width: 30px;
+    height: auto;
+    opacity: 0.7;
+    animation: facebook 2s ease-in-out infinite;
+}
+@keyframes facebook {
+0%,100%{
+    opacity: 0.7;
+}
+50%{
+    opacity: 0.2;
+}
+}
+.facebook:hover{
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+.third-column{
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+}
+.right-row img{
+    width: 350px;
+    height: auto;
+    opacity: 0.5;
+}
+.left-row img{
+    width: 350px;
+    height: auto;
+    opacity: 0.4;
+}
+.scroll-top{
+    position: absolute;
+    right: -20%;
+    opacity: 0.6;
+}
+.scroll-top:hover{
+    opacity: 1.0;
+    transition: all 0.3s;
+}
+
+
+
+
+
+
+/* --------------------------------
+footer
+-------------------------------- */
+.footer{
+    padding: 24px 0;
+}
+.footer-wapper{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.copyrights{
+    display: block;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
