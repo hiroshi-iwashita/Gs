@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+<header></header>
+
+<main></main>
+
+<footer></footer>
+
+<script src="js/jquery-2.1.3.min.js"></script>
+<script>
+
+
+
+// ルール
+// 選択肢を追加・削除する場合は、下記のみいじる！
+// 1. janken_tpl_2.html:49-
+// 2. janken_tpl_2.html:72-
+
+
+
+// 準備
+$("header").append('<h1>じゃんけん</h1>');
+$("main").append('<ul id="choices"></ul>');
+$("main").append('<div>コンピュータの出した手は？「<span id="pc_hands"></span>」</div>');
+$("main").append('<div id="judgement">ここに表示されます</div>');
+
+
+// 関数（選択肢追加）定義
+const choices = new Array();
+function addChoice(choice){
+    choices.push(choice);
+    let index = choices.indexOf(choice);
+    $("ul#choices").append('<li>' + choices[index] + '</li>');
+    return index;
+};
+
+
+
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓      1      ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+addChoice("グー");
+addChoice("チョキ");
+addChoice("パー");
+// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑      1      ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+console.dir(choices);
+
+
+
+// クリックした選択肢のindex取得、cpuの選択肢自動決定
+$("li").on("click", function(){
+    let myNum = $(this).index();
+    let myChoice =choices[myNum];
+    let cpuNum = Math.floor(Math.random()*choices.length);
+    let cpuChoice =choices[cpuNum];
+    console.log(myChoice);
+    console.log(cpuChoice);
+
+
+// 勝負
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓      2      ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+    let result ="";
+    if(myNum == cpuNum){
+        result="引き分け";
+    }else if(myNum==(choices.length-1) && cpuNum==0){
+        result="あなたの勝ち";
+    }else if(myNum==0 && cpuNum==(choices.length-1)){
+        result="あなたの負け";
+    }else if(myNum < cpuNum){
+        result="あなたの勝ち";
+    }else{
+        result="あなたの負け";
+    }
+// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑      2      ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+
+
+    $("#pc_hands").html(cpuChoice);
+    $("#judgement").html(result);
+
+});
+
+
+</script>
+</body>
+
+</html>
